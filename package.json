@@ -1,0 +1,43 @@
+{
+  "name": "test-app",
+  "version": "0.0.1",
+  "description": "test-app trying out electron-updater",
+  "main": "main.js",
+  "keywords": [],
+  "author": "cPTheme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:cPTheme/test-app.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "publish": "build -p always",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "devDependencies": {
+    "electron": "^1.8.1",
+    "electron-builder": "^19.46.6"
+  },
+  "dependencies": {
+    "electron-log": "^1.3.0",
+    "electron-updater": "^2.16.3"
+  },
+  "build": {
+    "appId": "io.github.cptheme.test-app",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "cPTheme",
+        "repo": "test-app"
+      }
+    ],
+    "mac": {
+      "category": "your.app.category.devtools",
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    }
+  }
+}

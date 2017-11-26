@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    h1 {
+      font-family: 'Verdana'
+    }
+
+    .msg {
+      font-family: 'Source Code Pro'
+    }
+  </style>
+</head>
+<body>
+  <h1>App Version: <span class="version"></span></h1>
+  <h1>Package Version: <span class="p-version"></span></h1>
+  <div class=".msg"></div>
+  <script>
+    const electron = require('electron')
+    const { ipcRenderer } = electron
+    const { version } = require('./package')
+    document.querySelector('.p-version').innerText = version
+    document.querySelector('.version').innerText = electron.remote.app.getVersion()
+    
+    ipcRenderer.on('message', function(event, text) {
+      document.querySelector('.msg').innerText = text + '\n';
+    })
+  </script>
+</body>
+</html>
