@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "publish": "build -p always",
+    "publish": "build -mwl -p always",
     "postinstall": "electron-builder install-app-deps"
   },
   "devDependencies": {
