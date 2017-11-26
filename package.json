@@ -1,6 +1,6 @@
 {
   "name": "test-app",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "description": "test-app testing  out electron-updater",
   "main": "main.js",
   "keywords": [],
@@ -13,6 +13,7 @@
   "scripts": {
     "start": "electron .",
     "publish": "build -mwl -p always",
+    "osx-sign": "electron-osx-sign ./dist/mac/test-app.app $CST",
     "postinstall": "electron-builder install-app-deps"
   },
   "devDependencies": {
