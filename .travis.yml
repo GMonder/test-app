@@ -1,0 +1,25 @@
+language: node_js
+node_js: "8"
+
+os: osx
+osx_image: xcode9.1
+
+before_cache:
+  - rm -rf $HOME/.cache/electron-builder/wine
+
+cache:
+  directories:
+  - node_modules
+  - $HOME/.cache/electron
+  - $HOME/.cache/electron-builder
+
+script:
+  - npm run publish
+
+env:
+  - ELECTRON_CACHE=$HOME/.cache/electron
+  - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+  
+branches:
+  only: 
+    - release
