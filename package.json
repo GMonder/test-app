@@ -1,7 +1,7 @@
 {
   "name": "test-app",
   "version": "0.0.1",
-  "description": "test-app testing out electron-updater",
+  "description": "test-app testing  out electron-updater",
   "main": "main.js",
   "keywords": [],
   "author": "cPTheme",
