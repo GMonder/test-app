@@ -8,6 +8,7 @@
   <style>
     h1 {
       font-family: 'Verdana';
+      font-weight: 400px;
       color: blue;
     }
 
@@ -28,6 +29,7 @@
     document.querySelector('.version').innerText = electron.remote.app.getVersion()
     
     ipcRenderer.on('message', function(event, text) {
+      text = text || ''
       document.querySelector('.msg').innerText = text + '\n';
     })
   </script>
